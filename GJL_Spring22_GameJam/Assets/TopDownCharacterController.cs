@@ -7,7 +7,7 @@ public class TopDownCharacterController : MonoBehaviour
     private Rigidbody2D myRigidbody2D;
     private Vector3 moveDir;
 
-    private const float MOVE_SPEED = 20f;
+    public float MOVE_SPEED = 20f;
 
     private void Awake()
     {
