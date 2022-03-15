@@ -96,6 +96,37 @@ public class CharacterAnimation : MonoBehaviour
 
             }
         }
+
+        else
+        {
+            if (TopDownCharacterController.instance.isFacingUp)
+
+            {
+                if(TopDownCharacterController.instance.isFacingRight)
+                {
+                    ChangeAnimationState(PLAYER_WALK_BACKRIGHT);
+                       
+                }
+
+                else
+                {
+                    ChangeAnimationState(PLAYER_WALK_BACKLEFT);
+                }
+            }
+
+            else
+            {
+                if(TopDownCharacterController.instance.isFacingRight)
+                {
+                    ChangeAnimationState(PLAYER_WALK_RIGHT);
+                }
+
+                else
+                {
+                    ChangeAnimationState(PLAYER_WALK_LEFT);
+                }
+            }
+        }
             
 
 
