@@ -6,13 +6,15 @@ public class TopDownCharacterController : MonoBehaviour
 {
     private Rigidbody2D myRigidbody2D;
     private Vector3 moveDir;
-    public Animator animator;
+    
 
     public float MOVE_SPEED = 20f;
 
     private void Awake()
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
+
+        
 
     }
     private void Update()
