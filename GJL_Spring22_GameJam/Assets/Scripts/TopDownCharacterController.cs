@@ -6,6 +6,7 @@ public class TopDownCharacterController : MonoBehaviour
 {
     private Rigidbody2D myRigidbody2D;
     private Vector3 moveDir;
+    public Animator animator;
 
     public float MOVE_SPEED = 20f;
 
