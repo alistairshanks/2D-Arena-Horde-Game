@@ -14,16 +14,17 @@ public class CombatHandler : MonoBehaviour
             if (TopDownCharacterController.instance.isFacingRight)
             {
                 animator.SetTrigger("AttackRight");
-                
             }
 
             else
             {
                 animator.SetTrigger("AttackLeft");
-               
 
             }
-        }
 
+        }
+           
     }
+
 }
+
