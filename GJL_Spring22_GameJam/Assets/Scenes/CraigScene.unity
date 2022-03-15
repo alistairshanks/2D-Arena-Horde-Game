@@ -293,8 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDir: {x: 0, y: 0, z: 0}
   myRigidbody2D: {fileID: 0}
-  animator: {fileID: 0}
-  isFacingUp: 1
+  isFacingUp: 0
   isFacingRight: 1
   isStandingStill: 1
   MOVE_SPEED: 10
