@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterAnimation : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
     private string currentAnimation;
     private string currentState;
 
@@ -56,13 +56,41 @@ public class CharacterAnimation : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (TopDownCharacterController.instance.isFacingRight) 
-
+        if (TopDownCharacterController.instance.isStandingStill)
         {
+            if (TopDownCharacterController.instance.isFacingUp)
+
+            {
+                if (TopDownCharacterController.instance.isFacingRight)
+
+                    ChangeAnimationState(PLAYER_IDLE_BACKRIGHT);
+
+
+                else
+
+                    ChangeAnimationState(PLAYER_IDLE_BACKLEFT);
+            }
+
+            else
+            {
+
+                if (TopDownCharacterController.instance.isFacingRight)
+
+                    ChangeAnimationState(PLAYER_IDLE_RIGHT);
+
+                else
+
+                    ChangeAnimationState(PLAYER_IDLE_LEFT);
+
+            }
+        }
             
 
-        }
 
+
+               
+        
+        
 
 
 
