@@ -5,14 +5,25 @@ using UnityEngine;
 public class CombatHandler : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public Animator animator;
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (TopDownCharacterController.instance.isFacingRight)
+            {
+                animator.SetTrigger("AttackRight");
+                
+            }
+
+            else
+            {
+                animator.SetTrigger("AttackLeft");
+               
+
+            }
+        }
+
     }
 }

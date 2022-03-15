@@ -8,12 +8,17 @@ public class TopDownCharacterController : MonoBehaviour
     public static TopDownCharacterController instance;
 
 
-    private Rigidbody2D myRigidbody2D;
-    private Vector3 moveDir;
+    public Vector3 moveDir;
+
+    public Rigidbody2D myRigidbody2D;
 
 
     public Animator animator;
+
+    public bool isFacingUp = true;
     public bool isFacingRight = true;
+    public bool isStandingStill = true;
+
     public float MOVE_SPEED = 20f;
 
     private void Awake()
@@ -32,6 +37,8 @@ public class TopDownCharacterController : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             moveY = +1f;
+
+           
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -63,11 +70,24 @@ public class TopDownCharacterController : MonoBehaviour
         }
 
         moveDir = new Vector3(moveX, moveY).normalized;
+
+      if (moveDir.x == 0f && moveDir.y == 0f)
+        {
+            isStandingStill = true;
+        }
+
+      else
+        {
+            isStandingStill = false;
+        }
+        
     }
 
     private void FixedUpdate()
     {
         myRigidbody2D.velocity = moveDir * MOVE_SPEED;
+
+        
     }
 
 
