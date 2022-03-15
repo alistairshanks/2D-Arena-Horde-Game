@@ -18,7 +18,7 @@ public class CharacterAnimation : MonoBehaviour
     const string PLAYER_WALK_RIGHT = "WalkingRight";
     const string PLAYER_WALK_LEFT = "WalkingLeft";
     const string PLAYER_WALK_BACKRIGHT = "WalkingBackRight";
-    const string PLAYER_WALK_BACKLEFT = "WalkingLeft";
+    const string PLAYER_WALK_BACKLEFT = "WalkingBackLeft";
 
     const string ATTACK_RIGHT = "AttackRight";
     const string ATTACK_LEFT = "AttackLeft";
