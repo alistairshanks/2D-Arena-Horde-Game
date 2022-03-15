@@ -12,7 +12,7 @@ public class CharacterAnimation : MonoBehaviour
 
     const string PLAYER_IDLE_RIGHT = "IdleFacingRight";
     const string PLAYER_IDLE_LEFT = "IdleFacingLeft";
-    const string PLAYER_IDLE_BACKRIGHT = "IdleFacingBackRght";
+    const string PLAYER_IDLE_BACKRIGHT = "IdleFacingBackRight";
     const string PLAYER_IDLE_BACKLEFT = "IdleFacingBackLeft";
 
     const string PLAYER_WALK_RIGHT = "WalkingRight";
@@ -62,25 +62,37 @@ public class CharacterAnimation : MonoBehaviour
 
             {
                 if (TopDownCharacterController.instance.isFacingRight)
-
+                {
                     ChangeAnimationState(PLAYER_IDLE_BACKRIGHT);
+
+                    Debug.Log("player idle backRight");
+                }
+
 
 
                 else
-
+                {
                     ChangeAnimationState(PLAYER_IDLE_BACKLEFT);
+                    Debug.Log("player idle backLeft");
+                }
             }
 
             else
             {
 
                 if (TopDownCharacterController.instance.isFacingRight)
+                {
 
                     ChangeAnimationState(PLAYER_IDLE_RIGHT);
+                    Debug.Log("player idle Right");
+                }
 
                 else
-
+                {
                     ChangeAnimationState(PLAYER_IDLE_LEFT);
+                    Debug.Log("player idle Left");
+                }
+
 
             }
         }

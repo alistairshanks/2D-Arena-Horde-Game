@@ -13,9 +13,9 @@ public class TopDownCharacterController : MonoBehaviour
     public Rigidbody2D myRigidbody2D;
 
 
-    public Animator animator;
+   
 
-    public bool isFacingUp = true;
+    public bool isFacingUp = false;
     public bool isFacingRight = true;
     public bool isStandingStill = true;
 
@@ -38,12 +38,16 @@ public class TopDownCharacterController : MonoBehaviour
         {
             moveY = +1f;
 
+            isFacingUp = true;
+
            
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             moveY = -1f;
+
+            isFacingUp = false;
 
             
         }
