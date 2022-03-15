@@ -8,7 +8,7 @@ public class TopDownCharacterController : MonoBehaviour
     public static TopDownCharacterController instance;
 
 
-    private Rigidbody2D myRigidbody2D;
+    public Rigidbody2D myRigidbody2D;
     private Vector3 moveDir;
 
 
@@ -33,7 +33,7 @@ public class TopDownCharacterController : MonoBehaviour
         {
             moveY = +1f;
         }
-
+        
         if (Input.GetKey(KeyCode.S))
         {
             moveY = -1f;
