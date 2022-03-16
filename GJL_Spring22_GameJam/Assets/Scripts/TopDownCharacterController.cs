@@ -10,12 +10,16 @@ public class TopDownCharacterController : MonoBehaviour
 
     public Vector3 moveDir;
 
+
+
     public Rigidbody2D myRigidbody2D;
 
 
     public Animator animator;
 
-    public Transform attackPoint;
+    public Transform attackPointRight;
+    public Transform attackPointLeft;
+
     public Vector2 attackRange = new Vector2 (1, 2);
     public LayerMask enemyLayers;
 
@@ -108,7 +112,6 @@ public class TopDownCharacterController : MonoBehaviour
         {
             isAttackPressed = true;
 
-            Debug.Log("ATTACK!");
         }
 
         if (isAttackPressed)
@@ -151,20 +154,40 @@ public class TopDownCharacterController : MonoBehaviour
     
     void AttackDamage()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach(Collider2D enemy in hitEnemies)
+        if (isFacingRight == true)
         {
-            Debug.Log("We hit " + enemy.name);
+
+
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPointRight.position, attackRange, 0f, enemyLayers);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Debug.Log("We hit " + enemy.name);
+            }
         }
+
+        else
+        {
+
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPointLeft.position, attackRange, 0f, enemyLayers);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Debug.Log("We hit " + enemy.name);
+            }
+        }
+
+        
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
+        if (attackPointRight == null && attackPointLeft == null)
             return;
        
-        Gizmos.DrawWireCube(attackPoint.position, attackRange);
+        Gizmos.DrawWireCube(attackPointRight.position, attackRange);
+        Gizmos.DrawWireCube(attackPointLeft.position, attackRange);
     }
 
 
