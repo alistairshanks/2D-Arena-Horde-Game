@@ -15,12 +15,19 @@ public class TopDownCharacterController : MonoBehaviour
 
     public Animator animator;
 
+    public Transform attackPoint;
+    public Vector2 attackRange = new Vector2 (1, 2);
+    public LayerMask enemyLayers;
+
     public bool isFacingUp = false;
     public bool isFacingRight = true;
     public bool isStandingStill = true;
     public bool isAttackPressed;
     public bool isAttacking;
-    private float attackDelay;
+
+
+    private float attackDelay = 0.3f;
+    private float attackDamageDelay = 0.2f;
 
 
     public float MOVE_SPEED = 20f;
@@ -115,8 +122,9 @@ public class TopDownCharacterController : MonoBehaviour
 
             }
 
-            attackDelay = 0.3f;
+            
             Invoke("AttackComplete", attackDelay);
+            Invoke("AttackDamage", attackDamageDelay);
           }
 
 
@@ -141,6 +149,24 @@ public class TopDownCharacterController : MonoBehaviour
     
 
     
+    void AttackDamage()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("We hit " + enemy.name);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+       
+        Gizmos.DrawWireCube(attackPoint.position, attackRange);
+    }
+
 
     void AttackComplete()
     {
