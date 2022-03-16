@@ -1999,10 +1999,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDir: {x: 0, y: 0, z: 0}
   myRigidbody2D: {fileID: 0}
+  animator: {fileID: 1014322718}
   isFacingUp: 0
   isFacingRight: 1
   isStandingStill: 1
-  AttackIsPressed: 0
+  isAttackPressed: 0
   isAttacking: 0
   MOVE_SPEED: 4
 --- !u!50 &1014322721

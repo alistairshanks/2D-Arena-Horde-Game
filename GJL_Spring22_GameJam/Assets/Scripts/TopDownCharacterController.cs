@@ -13,13 +13,14 @@ public class TopDownCharacterController : MonoBehaviour
     public Rigidbody2D myRigidbody2D;
 
 
-   
+    public Animator animator;
 
     public bool isFacingUp = false;
     public bool isFacingRight = true;
     public bool isStandingStill = true;
-    public bool AttackIsPressed = false;
+    public bool isAttackPressed;
     public bool isAttacking;
+    private float attackDelay;
 
 
     public float MOVE_SPEED = 20f;
@@ -37,71 +38,89 @@ public class TopDownCharacterController : MonoBehaviour
         float moveX = 0f;
         float moveY = 0f;
 
-
-        if (Input.GetKey(KeyCode.W))
+        if (isAttacking == false)
         {
-            moveY = +1f;
-
-            isFacingUp = true;
 
 
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            moveY = -1f;
-
-            isFacingUp = false;
-
-
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveX = -1f;
-
-            if (isFacingRight)
+            if (Input.GetKey(KeyCode.W))
             {
-                Flip();
+                moveY = +1f;
+
+                isFacingUp = true;
+
+
             }
 
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            moveX = +1f;
-
-            if (!isFacingRight)
+            if (Input.GetKey(KeyCode.S))
             {
-                Flip();
+                moveY = -1f;
+
+                isFacingUp = false;
+
+
             }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                moveX = -1f;
+
+                if (isFacingRight)
+                {
+                    Flip();
+                }
+
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                moveX = +1f;
+
+                if (!isFacingRight)
+                {
+                    Flip();
+                }
+            }
+
+            moveDir = new Vector3(moveX, moveY).normalized;
+
+            if (moveDir.x == 0f && moveDir.y == 0f)
+            {
+                isStandingStill = true;
+            }
+
+            else
+            {
+                isStandingStill = false;
+            }
+
+
         }
-
-        moveDir = new Vector3(moveX, moveY).normalized;
-
-        if (moveDir.x == 0f && moveDir.y == 0f)
-        {
-            isStandingStill = true;
-        }
-
-        else
-        {
-            isStandingStill = false;
-        }
-
 
         if (Input.GetKeyDown("space"))
 
         {
-            AttackIsPressed = true;
+            isAttackPressed = true;
 
-            Debug.Log ("space bar was pressed");
+            Debug.Log("ATTACK!");
         }
 
-      
+        if (isAttackPressed)
+        {
 
-      
+            isAttackPressed = false;
 
+            if (!isAttacking)
+            {
+                isAttacking = true;
+
+            }
+
+            attackDelay = 0.3f;
+            Invoke("AttackComplete", attackDelay);
+          }
+
+
+    
         
     }
 
@@ -116,22 +135,17 @@ public class TopDownCharacterController : MonoBehaviour
     private void Flip()
     {
         // Switch the way the player is labelled as facing.
-        isFacingRight = !isFacingRight;/*
-
-        // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-   */ }
-
-    void Attack()
-    {
-
+        isFacingRight = !isFacingRight;
     }
+
+    
+
+    
 
     void AttackComplete()
     {
-        AttackIsPressed = false;
+
+        isAttacking = false;
     }
 
 }

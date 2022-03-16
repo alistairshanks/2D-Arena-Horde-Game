@@ -134,14 +134,14 @@ public class CharacterAnimation : MonoBehaviour
 
             //this determines which direction to attack 
 
-            if (TopDownCharacterController.instance.AttackIsPressed)
+            if (TopDownCharacterController.instance.isAttackPressed)
             {
 
-                TopDownCharacterController.instance.AttackIsPressed = false;
+                TopDownCharacterController.instance.isAttackPressed = false;
 
 
 
-                if (!TopDownCharacterController.instance.AttackIsPressed)
+                if (!TopDownCharacterController.instance.isAttackPressed)
 
                 {
                     if (TopDownCharacterController.instance.isFacingUp)

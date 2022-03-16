@@ -35,16 +35,14 @@ public class AnimationManager : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (TopDownCharacterController.instance.isStandingStill == true)
+        if (TopDownCharacterController.instance.isStandingStill == true && TopDownCharacterController.instance.isAttacking == false)
         {
             action = "Idle";
         }
-
         if(TopDownCharacterController.instance.isStandingStill == false && TopDownCharacterController.instance.isAttacking == false)
         {
             action = "Walk";
         }
-
         if(TopDownCharacterController.instance.isAttacking == true)
         {
             action = "Attack";
@@ -58,19 +56,16 @@ public class AnimationManager : MonoBehaviour
         {
             facing = "FacingUp";
         }
-
         else
         {
             facing = "FacingDown";
         }
 
+
         if(TopDownCharacterController.instance.isFacingRight == true)
         {
             direction = "Right";
-
         }
-       
-
         else
         {
             direction = "Left";
