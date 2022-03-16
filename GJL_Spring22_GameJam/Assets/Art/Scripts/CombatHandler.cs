@@ -6,6 +6,10 @@ public class CombatHandler : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public static CombatHandler instance;
+
+    public bool AttackIsPressed = true;
+
     public Animator animator;
     private void Update()
     {
@@ -22,6 +26,17 @@ public class CombatHandler : MonoBehaviour
 
             }
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AttackIsPressed = true;
+        }
+
+        else
+
+        {
+            AttackIsPressed = false;
         }
            
     }

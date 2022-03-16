@@ -56,6 +56,8 @@ public class CharacterAnimation : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //this determines where the character is looking when standing still
+
         if (TopDownCharacterController.instance.isStandingStill)
         {
             if (TopDownCharacterController.instance.isFacingUp)
@@ -65,7 +67,7 @@ public class CharacterAnimation : MonoBehaviour
                 {
                     ChangeAnimationState(PLAYER_IDLE_BACKRIGHT);
 
-                    Debug.Log("player idle backRight");
+                    
                 }
 
 
@@ -73,7 +75,7 @@ public class CharacterAnimation : MonoBehaviour
                 else
                 {
                     ChangeAnimationState(PLAYER_IDLE_BACKLEFT);
-                    Debug.Log("player idle backLeft");
+                    
                 }
             }
 
@@ -84,28 +86,30 @@ public class CharacterAnimation : MonoBehaviour
                 {
 
                     ChangeAnimationState(PLAYER_IDLE_RIGHT);
-                    Debug.Log("player idle Right");
+                    
                 }
 
                 else
                 {
                     ChangeAnimationState(PLAYER_IDLE_LEFT);
-                    Debug.Log("player idle Left");
+                    
                 }
 
 
             }
         }
 
+        //this determines what animation to play when character is moving 
+
         else
         {
             if (TopDownCharacterController.instance.isFacingUp)
 
             {
-                if(TopDownCharacterController.instance.isFacingRight)
+                if (TopDownCharacterController.instance.isFacingRight)
                 {
                     ChangeAnimationState(PLAYER_WALK_BACKRIGHT);
-                       
+
                 }
 
                 else
@@ -116,7 +120,7 @@ public class CharacterAnimation : MonoBehaviour
 
             else
             {
-                if(TopDownCharacterController.instance.isFacingRight)
+                if (TopDownCharacterController.instance.isFacingRight)
                 {
                     ChangeAnimationState(PLAYER_WALK_RIGHT);
                 }
@@ -125,6 +129,57 @@ public class CharacterAnimation : MonoBehaviour
                 {
                     ChangeAnimationState(PLAYER_WALK_LEFT);
                 }
+            }
+
+
+            //this determines which direction to attack 
+
+            if (TopDownCharacterController.instance.AttackIsPressed)
+            {
+
+                TopDownCharacterController.instance.AttackIsPressed = false;
+
+
+
+                if (!TopDownCharacterController.instance.AttackIsPressed)
+
+                {
+                    if (TopDownCharacterController.instance.isFacingUp)
+
+                    {
+                        if (TopDownCharacterController.instance.isFacingRight)
+                        {
+                            ChangeAnimationState(ATTACK_BACKRIGHT);
+
+                        }
+
+
+
+                        else
+                        {
+                            ChangeAnimationState(ATTACK_BACKLEFT);
+
+                        }
+
+                    }
+
+                    else
+                    {
+
+                        if (TopDownCharacterController.instance.isFacingRight)
+                        {
+
+                            ChangeAnimationState(ATTACK_RIGHT);
+                        }
+
+                        else
+                        {
+                            ChangeAnimationState(ATTACK_LEFT);
+
+                        }
+                    }
+                }
+
             }
         }
             

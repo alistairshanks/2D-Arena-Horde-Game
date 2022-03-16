@@ -18,6 +18,9 @@ public class TopDownCharacterController : MonoBehaviour
     public bool isFacingUp = false;
     public bool isFacingRight = true;
     public bool isStandingStill = true;
+    public bool AttackIsPressed = false;
+    public bool isAttacking;
+
 
     public float MOVE_SPEED = 20f;
 
@@ -34,13 +37,14 @@ public class TopDownCharacterController : MonoBehaviour
         float moveX = 0f;
         float moveY = 0f;
 
+
         if (Input.GetKey(KeyCode.W))
         {
             moveY = +1f;
 
             isFacingUp = true;
 
-           
+
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -49,7 +53,7 @@ public class TopDownCharacterController : MonoBehaviour
 
             isFacingUp = false;
 
-            
+
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -75,15 +79,29 @@ public class TopDownCharacterController : MonoBehaviour
 
         moveDir = new Vector3(moveX, moveY).normalized;
 
-      if (moveDir.x == 0f && moveDir.y == 0f)
+        if (moveDir.x == 0f && moveDir.y == 0f)
         {
             isStandingStill = true;
         }
 
-      else
+        else
         {
             isStandingStill = false;
         }
+
+
+        if (Input.GetKeyDown("space"))
+
+        {
+            AttackIsPressed = true;
+
+            Debug.Log ("space bar was pressed");
+        }
+
+      
+
+      
+
         
     }
 
@@ -105,5 +123,15 @@ public class TopDownCharacterController : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
    */ }
+
+    void Attack()
+    {
+
+    }
+
+    void AttackComplete()
+    {
+        AttackIsPressed = false;
+    }
 
 }
