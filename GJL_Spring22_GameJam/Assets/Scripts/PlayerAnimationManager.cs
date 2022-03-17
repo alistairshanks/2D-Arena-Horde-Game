@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationManager : MonoBehaviour
+public class PlayerAnimationManager : MonoBehaviour
 {
   
-    private string action;
-    private string facing;
-    private string direction;
+    private string animationAction;
+    private string animationFacing;
+    private string animationDirection;
 
 
     // example string for "character" + "action" + "facing" + "direction" would be "player" + "walk" + "front" + "left"
@@ -37,15 +37,15 @@ public class AnimationManager : MonoBehaviour
 
         if (TopDownCharacterController.instance.isStandingStill == true && TopDownCharacterController.instance.isAttacking == false)
         {
-            action = "Idle";
+            animationAction = "Idle";
         }
         if(TopDownCharacterController.instance.isStandingStill == false && TopDownCharacterController.instance.isAttacking == false)
         {
-            action = "Walk";
+            animationAction = "Walk";
         }
         if(TopDownCharacterController.instance.isAttacking == true)
         {
-            action = "Attack";
+            animationAction = "Attack";
         }
 
 
@@ -54,24 +54,24 @@ public class AnimationManager : MonoBehaviour
 
         if (TopDownCharacterController.instance.isFacingUp == true)
         {
-            facing = "FacingUp";
+            animationFacing = "FacingUp";
         }
         else
         {
-            facing = "FacingDown";
+            animationFacing = "FacingDown";
         }
 
 
         if(TopDownCharacterController.instance.isFacingRight == true)
         {
-            direction = "Right";
+            animationDirection = "Right";
         }
         else
         {
-            direction = "Left";
+            animationDirection = "Left";
         }
 
-        ChangeAnimationState(action + facing + direction);
+        ChangeAnimationState(animationAction + animationFacing + animationDirection);
 
 
 

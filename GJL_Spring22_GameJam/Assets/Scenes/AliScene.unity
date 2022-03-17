@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 44039654}
   - component: {fileID: 44039653}
   - component: {fileID: 44039656}
+  - component: {fileID: 44039657}
+  - component: {fileID: 44039658}
   m_Layer: 6
   m_Name: Orc
   m_TagString: Enemy
@@ -252,6 +254,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4845407, y: 0.52288496}
   m_EdgeRadius: 0
+--- !u!114 &44039657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44039652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147707b4a4e1c664ebe41c39aec6d917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1014322723}
+  moveSpeed: 3
+  isMovingUp: 0
+  isMovingRight: 0
+  isTakingDamage: 0
+  previousPosition: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
+  animator: {fileID: 44039653}
+--- !u!50 &44039658
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44039652}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &47941742
 GameObject:
   m_ObjectHideFlags: 0
