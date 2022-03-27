@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2810875742940164713}
   - component: {fileID: 2810875742940164712}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ProjectileSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4271053488063721687}
   - component: {fileID: 8447613262894377340}
   - component: {fileID: -2268224073204235139}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ThunderBoltTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,8 +123,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!58 &-2268224073204235139
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2543318819350164469}
   - component: {fileID: 8763797014649373745}
   - component: {fileID: 1598535641853112341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ThunderBoltBottomLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}

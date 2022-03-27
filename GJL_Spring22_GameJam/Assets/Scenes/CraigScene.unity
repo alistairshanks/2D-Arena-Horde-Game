@@ -5405,7 +5405,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2810875742940164712, guid: 7e71d8d6c4f33cd46a76bc0b70ab3233, type: 3}
       propertyPath: numberOfProjectiles
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2810875742940164713, guid: 7e71d8d6c4f33cd46a76bc0b70ab3233, type: 3}
       propertyPath: m_RootOrder
