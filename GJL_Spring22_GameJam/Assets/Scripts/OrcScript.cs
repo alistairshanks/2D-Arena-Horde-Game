@@ -12,7 +12,7 @@ public class OrcScript : MonoBehaviour
     private Vector2 finalAverageMovement;
 
     private Rigidbody2D myRigidbody2d;
-    public float moveSpeed = 3f;
+    public float moveSpeed = 0.5f;
 
     public bool isMovingUp;
     public bool isMovingRight;
@@ -50,7 +50,7 @@ public class OrcScript : MonoBehaviour
         // *************** NEW SECTION TO TRY TO STOP AI FROM GROUPING UP TOGETHER **************
 
         float separateSpeed = moveSpeed / 2f;
-        float separateRadius = 0.5f;
+        float separateRadius = 1f;
 
        
         float count = 0f;
@@ -134,30 +134,35 @@ public class OrcScript : MonoBehaviour
 
         */
 
-        float angle = Vector2.SignedAngle(this.transform.up, myRigidbody2d.velocity.normalized);
+        float angle = Vector2.SignedAngle(this.transform.up, (movement * moveSpeed).normalized);
 
         if (angle >= -45 && angle < 45)
         {
-            animationDirection = "Up";
+            animationFacing = "Up";
+
+            Debug.Log("animate up");
         }
 
         else if (angle >= 45 && angle < 135)
         {
-            animationDirection = "Right";
+            animationDirection = "Left";
+            Debug.Log("animate left");
         }
 
 
         else if (angle > -135 && angle < -45)
         {
-            animationDirection = "Left";
+            animationDirection = "Right";
+            Debug.Log("animate right");
         }
 
         else if (Mathf.Abs(angle) >= 135)
         {
-            animationDirection = "Down";
+            animationFacing = "Down";
+            Debug.Log("animate down");
         }
 
-        Debug.Log(angle);
+        
 
 
         if (isTakingDamage == true)
@@ -180,8 +185,10 @@ public class OrcScript : MonoBehaviour
         //define direction and speed to move
         void moveEnemyAi(Vector2 finalAverageMovement)
         {
-      //  myRigidbody2d.MovePosition((Vector2)transform.position + ((movementTowardsPlayer) * moveSpeed * Time.deltaTime));
+     
         myRigidbody2d.MovePosition((Vector2)transform.position + (finalAverageMovement * moveSpeed * Time.deltaTime));
+
+      
         
             
     }
