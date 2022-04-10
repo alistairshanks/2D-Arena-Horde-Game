@@ -30,6 +30,11 @@ public class CharacterAnimation : MonoBehaviour
     const string DAMAGE_BACKRIGHT = "DamageBackLeft";
     const string DAMAGE_BACKLEFT = "DamageBackRight";
 
+    const string THUNDERBLADELEFT = "ThunderBladeLeft";
+    const string THUNDERBLADELEFTBACK = "ThunderBladeLeftBack";
+    const string THUNDERBLADERIGHT = "ThunderBladeRight";
+    const string THUNDERBLADERIGHTBACK = "ThunderBladeRightBack";
+
     const string DEATH = "Death";
 
     private void Start()
@@ -181,6 +186,12 @@ public class CharacterAnimation : MonoBehaviour
                 }
 
             }
+        }
+
+        if(ThunderBoltProjectileSpawner.instance.ThunderIsPressed)
+        {
+            ChangeAnimationState(THUNDERBLADELEFT);
+            Debug.Log("thunderattack");
         }
             
 

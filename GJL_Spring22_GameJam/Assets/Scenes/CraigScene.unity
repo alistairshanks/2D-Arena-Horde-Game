@@ -518,9 +518,9 @@ GameObject:
   - component: {fileID: 66543348}
   - component: {fileID: 66543347}
   - component: {fileID: 66543346}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5404,8 +5404,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2810875742940164712, guid: 7e71d8d6c4f33cd46a76bc0b70ab3233, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 5384065227765943316, guid: 7ea0f3df94ab2fc4c89f2f90592e4f39, type: 3}
+    - target: {fileID: 2810875742940164712, guid: 7e71d8d6c4f33cd46a76bc0b70ab3233, type: 3}
       propertyPath: numberOfProjectiles
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2810875742940164713, guid: 7e71d8d6c4f33cd46a76bc0b70ab3233, type: 3}
       propertyPath: m_RootOrder
@@ -5734,7 +5738,7 @@ GameObject:
   - component: {fileID: 1953734005}
   - component: {fileID: 1953734007}
   - component: {fileID: 1953734006}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4271053488063721687}
   - component: {fileID: 8447613262894377340}
   - component: {fileID: -2268224073204235139}
+  - component: {fileID: -8219578173858342423}
   m_Layer: 8
   m_Name: ThunderBoltTop
   m_TagString: Untagged
@@ -141,3 +142,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.38
+--- !u!114 &-8219578173858342423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2286084226727946469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ac3d2c6024be648966e64e6a358fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
