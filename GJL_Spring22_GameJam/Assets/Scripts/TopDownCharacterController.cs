@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TopDownCharacterController : MonoBehaviour
 {
+
+// Consider revising this code - should all these variables be public?
+
+// Should attack and damage be handled here? Consider one script for movement and another for handling attack and damage?
+
     //make this a singleton class so it can be accessed easily from other classes
     public static TopDownCharacterController instance;
 
