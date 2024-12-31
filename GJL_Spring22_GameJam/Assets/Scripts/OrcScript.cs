@@ -5,6 +5,8 @@ using UnityEngine;
 public class OrcScript : MonoBehaviour
 {
 
+//consider revising this script. Enemy movement and attacking should be handled seperately?
+
     public Transform player;
     private Vector2 movement;
     private Vector2 sumOfAiSeperation;
